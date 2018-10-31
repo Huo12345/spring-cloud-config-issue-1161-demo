@@ -4,5 +4,17 @@ services:
     image: mariadb
 #    image: mysql/mysql-server
 
+    environment:
+      - MYSQL_ROOT_PASSWORD=P@ssw0rd
+      - MYSQL_ROOT_HOST=172.%
+      - MYSQL_DATABASE=testdb
+      - MYSQL_USER=testuser
+      - MYSQL_PASSWORD=testpw
+
+    ports:
+      - "3310:3306"
+
   server:
     build: .
+    ports:
+      - "8080:8080"
